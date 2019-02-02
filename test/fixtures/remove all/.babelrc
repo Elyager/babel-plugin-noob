@@ -1,0 +1,11 @@
+{
+  "plugins": [
+    ["../../../src", {
+      "strip": [
+        "alert",
+        "window.alert",
+        "console.log",
+      ]
+    }]
+  ]
+}
