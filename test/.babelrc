@@ -1,10 +1,11 @@
 {
   "plugins": [
-    ["../../../src", {
+    ["../lib", {
       "strip": [
         "alert",
         "window.alert",
-        "console.*",
+        "console.log",
+        "window.console.log",
       ]
     }]
   ]

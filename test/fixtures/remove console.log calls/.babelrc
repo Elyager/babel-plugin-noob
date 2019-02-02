@@ -1,9 +1,0 @@
-{
-  "plugins": [
-    ["../../../src", {
-      "strip": [
-        "console.log"
-      ]
-    }]
-  ]
-}

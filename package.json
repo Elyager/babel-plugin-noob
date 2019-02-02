@@ -1,21 +1,27 @@
 {
-  "version": "0.0.0",
+  "name": "babel-plugin-noob",
+  "version": "1.0.1",
   "description": "My first babel plugin.",
   "repository": "elyager/babel-plugin-noob",
-  "author": "Erik Elyager <elyager@gmail.com>",
+  "author": {
+    "name": "Erik Elyager",
+    "email": "elyager@gmail.com",
+    "url": "blog.elyager.com"
+  },
   "main": "lib/index.js",
   "devDependencies": {
+    "ava": "^0.25.0",
+    "babel-core": "^6.26.3",
     "babel-cli": "^6.4.5",
     "babel-preset-es2015": "^6.3.13",
-    "babel-preset-stage-0": "^6.3.13",
-    "mocha": "^2.2.5"
+    "babel-preset-stage-0": "^6.3.13"
   },
   "scripts": {
     "clean": "rm -rf lib",
     "build": "babel src -d lib",
-    "test": "mocha --compilers js:babel-register",
-    "test:watch": "npm run test -- --watch",
-    "prepublish": "npm run clean && npm run build"
+    "test": "npm run build && ava test --verbose",
+    "test:watch": "npm run build && npm run test -- --watch",
+    "prepublishOnly": "npm run clean && npm run build"
   },
   "keywords": [
     "babel-plugin"

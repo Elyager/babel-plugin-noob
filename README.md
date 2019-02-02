@@ -2,20 +2,24 @@
 
 My first babel plugin.
 
+> Strip `console`, `alert`, and `debugger` statements from JavaScript code
+
+Useful for making sure you didn't leave any logging in production code.
+
 ## Example
 
 **In**
 
 ```js
-// input code
+function hey() {
+  debugger
+}
 ```
 
 **Out**
 
 ```js
-"use strict";
-
-// output code
+function hey() {}
 ```
 
 ## Installation
@@ -45,7 +49,7 @@ $ babel --plugins noob script.js
 ### Via Node API
 
 ```javascript
-require("babel-core").transform("code", {
-  plugins: ["noob"]
-});
+require('babel-core').transform('code', {
+  plugins: ['noob'],
+})
 ```
